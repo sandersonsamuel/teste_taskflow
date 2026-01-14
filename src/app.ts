@@ -6,6 +6,7 @@ import ScalarApiReference from '@scalar/fastify-api-reference'
 import { routes } from "./routes";
 import prismaPlugin from "./plugins/prisma"
 import jwtPlugin from "./plugins/jwt"
+import rateLimit from "@fastify/rate-limit"
 
 const port = process.env.PORT
 
@@ -17,6 +18,11 @@ app.register(prismaPlugin)
 app.register(jwtPlugin)
 app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
+
+app.register(rateLimit, {
+  max: 20,
+  timeWindow: "1 minute",
+})
 
 app.register(fastifyCors, {
   origin: true,

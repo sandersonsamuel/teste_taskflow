@@ -12,6 +12,12 @@ export default async function (app: FastifyInstance) {
   }, authController.register)
 
   app.post("/login", {
+    config: {
+      rateLimit: {
+        max: 5,
+        timeWindow: "1 minute",
+      }
+    },
     schema: {
       tags: ["Auth"],
       summary: "Login a user",
