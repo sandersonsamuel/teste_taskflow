@@ -11,7 +11,7 @@ export const getTaskByIdSchema = z.object({
 export const createTaskSchema = z.object({
   title: z.string().max(100),
   description: z.string().max(500),
-  status: taskStatusEnum,
+  status: taskStatusEnum.optional(),
   priority: priorityEnum.optional(),
   dueDate: z.date().optional(),
 }).refine((data) => {

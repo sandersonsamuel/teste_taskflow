@@ -8,9 +8,7 @@ import prismaPlugin from "./plugins/prisma"
 import jwtPlugin from "./plugins/jwt"
 import rateLimit from "@fastify/rate-limit"
 
-const port = process.env.PORT
-
-const app = fastify({
+export const app = fastify({
   logger: false,
 }).withTypeProvider<ZodTypeProvider>()
 
@@ -45,12 +43,3 @@ app.register(ScalarApiReference, {
 })
 
 app.register(routes)
-
-app.listen({
-  port: Number(port),
-  host: '0.0.0.0'
-
-}).then(() => {
-  console.log(`HTTP server running on http://localhost:${port}`);
-  console.log(`API Reference running on http://localhost:${port}/docs`);
-})
