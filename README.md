@@ -71,19 +71,19 @@ pnpm test
 ## 📚 Decisões Técnicas
 
 ### Fastify
-Como o projeto é uma API de gerenciamento de tarefas, foi escolhido o Fastify por sua performance, facilidade de uso e rapidez de desenvolvimento.
+O Fastify foi escolhido por sua alta performance, facilidade de uso e rapidez no desenvolvimento de APIs REST.
 
 ### Prisma
-Como o projeto é uma API de gerenciamento de tarefas, foi escolhido o Prisma por sua facilidade de uso, facilidade de modelagem de dados rapidez de desenvolvimento, segurança e experiencia com o ORM.
+O Prisma foi escolhido por sua facilidade de uso, modelagem de dados intuitiva, rapidez no desenvolvimento, segurança e pela experiência prévia com este ORM.
 
 ### Zod (fastify-type-provider-zod)
-Ultilizei o zod pela facilidade de tipagem e validação de dados junto ao fastify, e também pela experiencia que tenho com o zod.
+Utilizei o Zod pela facilidade de tipagem e validação de dados integrada ao Fastify, além da experiência prévia com a biblioteca.
 
 ### Vitest
-Ultilizei o vitest pela facilidade de testes e cobertura.
+Utilizei o Vitest pela sua facilidade na criação de testes e análise de cobertura de código.
 
 ### PostgreSQL
-Ultilizei o postgresql pela facilidade de uso e experiência com o banco de dados.
+Utilizei o PostgreSQL pela sua robustez, facilidade de uso e experiência prévia com este banco de dados relacional.
 
 ## 📁 Estrutura do Projeto
 
