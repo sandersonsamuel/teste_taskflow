@@ -32,7 +32,6 @@ describe("Integration: Delete task (DELETE)", () => {
 
     expect(result).toHaveProperty("message")
 
-    // Verify soft delete
     const deletedTask = await prisma.task.findUnique({
       where: { id: task.id }
     })

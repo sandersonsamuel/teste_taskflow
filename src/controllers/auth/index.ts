@@ -11,7 +11,7 @@ const register = async (request: FastifyRequest<{ Body: CreateUserSchema }>, rep
     const { password, ...user } = registerService
 
     return reply.status(201).send({
-      message: "Usuário cadastrado com sucesso",
+      message: "User registered successfully",
       user
     })
   } catch (error) {
@@ -41,7 +41,7 @@ const login = async (request: FastifyRequest<{ Body: LoginSchema }>, reply: Fast
       secure: process.env.NODE_ENV === "production",
       maxAge: 3600
     }).send({
-      message: "Usuário logado com sucesso",
+      message: "User logged in successfully",
       user
     })
 

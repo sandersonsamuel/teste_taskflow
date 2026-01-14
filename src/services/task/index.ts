@@ -121,7 +121,7 @@ async function remove(id: string, userId: string) {
     }
   })
 
-  return { message: "Tarefa deletada com sucesso" }
+  return { message: "Task deleted successfully" }
 }
 
 export default {

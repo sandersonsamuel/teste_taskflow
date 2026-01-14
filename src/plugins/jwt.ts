@@ -19,12 +19,12 @@ export default fp(async (app) => {
   app.decorate("authenticate", async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       const token = request.cookies.token
-      if (!token) return reply.status(401).send({ message: "Token não encontrado" })
+      if (!token) return reply.status(401).send({ message: "Token not found" })
 
       const decoded = app.jwt.verify(token) as { id: string }
       request.user = decoded
     } catch (err) {
-      return reply.status(401).send({ message: "Não autorizado" })
+      return reply.status(401).send({ message: "Unauthorized" })
     }
   })
 })
